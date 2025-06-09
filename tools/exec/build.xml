@@ -1,0 +1,43 @@
+<project name="execData" default="" basedir="." >
+	<property name="dest.dir" value="./classes" />
+	<path id="datacp">
+		<fileset dir="lib">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<target name="clear">
+		<echo message="delete. -> ${dest.dir}" />
+		<delete>
+			<fileset dir="${dest.dir}" />
+		</delete>
+	</target>
+
+	<target name="mkdir">
+		<mkdir dir ="${dest.dir}" />
+	</target>
+
+	<target name="compile" depends="mkdir">
+		<javac srcdir="./src/java" destdir="${dest.dir}" classpathref="datacp" encoding="UTF-8" />
+	</target>
+
+	<target name="exec-gw">
+		<java classname="com.senko.scash.relation.Runner" classpathref="datacp" fork="true" failonerror="true" maxmemory="512m">
+			<classpath>
+				<pathelement location="${dest.dir}" />
+			</classpath>
+			<arg value="${name}" />
+		</java>
+	</target>
+
+	<target name="exec-gw-list">
+		<java classname="com.senko.scash.relation.Runner" classpathref="datacp" fork="true" failonerror="true" maxmemory="512m">
+			<classpath>
+				<pathelement location="${dest.dir}" />
+			</classpath>
+			<arg value="${name}" />
+			<arg value="1" />
+		</java>
+	</target>
+
+</project>

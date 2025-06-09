@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="auto_create">
+<parameter name="testProperties" value="test_base/test_data/messageController/xml/test.properties"/>
+	<test verbose="2" name="T003_1" annotations="JDK">
+		<parameter name="param" value="T003_1"/>
+		<classes>
+			<class name="com.senko.scash.trm.MessageControllerTest">
+				<methods><include name="doGetListTest"/></methods>
+			</class>
+		</classes>
+	</test>
+</suite>
