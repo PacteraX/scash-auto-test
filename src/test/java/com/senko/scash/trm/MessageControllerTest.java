@@ -3,6 +3,7 @@ package com.senko.scash.trm;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.senko.scash.BaseScashTest;
 import com.senko.scash.trm.bean.dto.ListResponse;
 import com.senko.scash.trm.bean.dto.message.GetListByCodesRequest;
 import com.senko.scash.trm.bean.dto.message.GetListByTypeRequest;
@@ -11,14 +12,11 @@ import com.senko.scash.trm.bean.entity.MessageResource;
 import com.senko.scash.trm.controller.MessageController;
 import com.senko.scash.utils.CompareUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestContextManager;
 import org.springframework.test.context.TestPropertySource;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import com.senko.scash.BaseScashTest;
-
-import org.springframework.test.context.ContextConfiguration;
 
 import java.util.ArrayList;
 import java.util.List;
