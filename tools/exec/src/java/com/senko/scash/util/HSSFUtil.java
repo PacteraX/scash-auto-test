@@ -63,7 +63,7 @@ public class HSSFUtil {
                 return value;
             }
             else if (value.length() == 0){
-                return "'`'"; // Oracle対応後のID決済システムではバッククォートを空として扱う
+                return "''";
             }
             else {
                 return "'" + value + "'";

@@ -1,0 +1,45 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="auto_create">
+<parameter name="testProperties" value="src/test/resources/test_data/messageController/xml/test.properties"/>
+	<test verbose="2" name="T060_before" annotations="JDK">
+		<parameter name="param" value="src/test/resources/test_data/messageController/sql/DB_BEFORE_60.sql"/>
+		<parameter name="simsql" value=""/>
+		<classes>
+			<class name="com.senko.scash.trm.MessageControllerTest">
+				<methods><include name="doBeforeSimDate"/></methods>
+			</class>
+		</classes>
+	</test>
+	<test verbose="2" name="T060_1" annotations="JDK">
+		<parameter name="param" value="T060_1"/>
+		<classes>
+			<class name="com.senko.scash.trm.MessageControllerTest">
+				<methods><include name="doSaveAuOneIdSkipRegistMailAddrTest"/></methods>
+			</class>
+		</classes>
+	</test>
+	<test verbose="2" name="T060_2" annotations="JDK">
+		<parameter name="param" value="T060_2"/>
+		<classes>
+			<class name="com.senko.scash.trm.MessageControllerTest">
+				<methods><include name="doSaveAuOneIdSkipRegistMailAddrTest"/></methods>
+			</class>
+		</classes>
+	</test>
+	<test verbose="2" name="T060_3" annotations="JDK">
+		<parameter name="param" value="T060_3"/>
+		<classes>
+			<class name="com.senko.scash.trm.MessageControllerTest">
+				<methods><include name="doSaveAuOneIdSkipRegistMailAddrTest"/></methods>
+			</class>
+		</classes>
+	</test>
+	<test verbose="2" name="T060_result" annotations="JDK">
+		<parameter name="param" value="src/test/resources/test_data/messageController/result/DB_AFTER_60/"/>
+		<classes>
+			<class name="com.senko.scash.trm.MessageControllerTest">
+				<methods><include name="doResult"/></methods>
+			</class>
+		</classes>
+	</test>
+</suite>

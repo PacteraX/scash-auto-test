@@ -87,11 +87,11 @@ public class ResultDataCreater extends FileCreater<NullWriter>{
         for (int i = 0; i < columnsSize; i++) {
             cellVal = getStringCellValue(row.getCell(i));
             if("\"\"".equals(cellVal)){
-            	cellVal="`";
+            	cellVal="";
             }
-            if (cellVal == null || "".equals(cellVal)) {
-                break;
-            }
+//            if (cellVal == null || "".equals(cellVal)) {
+//                break;
+//            }
 
             csvRow.append(removeDoubleQuate(cellVal));
             csvRow.append(",");

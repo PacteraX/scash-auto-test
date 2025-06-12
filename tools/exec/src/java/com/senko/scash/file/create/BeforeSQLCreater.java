@@ -141,7 +141,7 @@ public class BeforeSQLCreater extends FileCreater<BufferedWriter> {
         StringBuilder sb = new StringBuilder();
         sb.append("INSERT INTO " + sheetName + " (");
         sb.append(insertkeys).append(") VALUES(");
-        sb.append(insertValues).append(")");
+        sb.append(insertValues).append(");");
         return sb.toString();
     }
 
