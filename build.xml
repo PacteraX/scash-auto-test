@@ -1,12 +1,10 @@
 <project name="scash-coverage" default="main" basedir="." xmlns:artifact="urn:maven-artifact-ant">
 	<!-- for project path -->
 	<property name="project.path" value="${basedir}"/>
-	<property name="scash.project.path"  value="D:\gitDownload\scash-text-resource-manager"/>
 	<property name="ser.path" value="${basedir}"/>
 
 	<!-- target path -->
 	<property name="target.base" value="${project.path}/target"/>
-	<property name="scash.target.base" value="${scash.project.path}/target"/>
 	<property name="scash.target.package" value="**/*"/>
 
 	<!-- ant lib -->
@@ -31,21 +29,6 @@
 		<echo message="Please ant param [instrument/report/clean]"/>
 	</target>
 
-	<target name="instrument-scash" description="Add jcoverage instrumentation">
-		<cobertura-instrument datafile="${ser.path}/cobertura.ser" todir="${coverage.instrumented.dir}">
-			<fileset dir="${scash.target.base}/classes">
-				<include name="${scash.target.package}"/>
-			</fileset>
-		</cobertura-instrument>
-		<copy todir="${target.base}/classes">
-			<fileset dir="${coverage.instrumented.dir}" includes="**/**"/>
-		</copy>
-	</target>
-	<target name="report-scash" description="HTML and XML coverage reports can be found in build/coverage">
-		<cobertura-report datafile="${ser.path}/cobertura.ser" destdir="${coverage.reports.dir}">
-			<fileset dir="${scash.project.path}/src/main/java" includes="**/*.java"/>
-		</cobertura-report>
-	</target>
 	<target name="clean">
 		<delete dir="${coverage.dir}"/>
 		<delete file="${project.path}/cobertura.ser"/>
